@@ -8,16 +8,16 @@ main().catch((err) => console.log(err));
 
 async function main() {
   await mongoose.connect(connectionString);
-  // const primateSchema = new mongoose.Schema({
-  //   name: String,
-  // });
+   const primateSchema = new mongoose.Schema({
+     name: String,
+   });
 
   primateSchema.methods.speak = function speak() {
     const greeting = this.name ? "Me name " + this.name : "I don't have a name";
     console.log(greeting);
   };
 
-  // const Primate = mongoose.model("Primate", primateSchema);
+ const Primate = mongoose.model("Primate", primateSchema);
 
   function empowerTheVoiceless(primate) {
     const greeting = primate.name

@@ -1,9 +1,19 @@
 import express from "express";
+import { create, findAllType } from '../controllers/primates.controllers.js'
+
+
+
+
 const router = express.Router();
 
 /* GET users listing. */
-router.get("/", function (req, res, next) {
-  res.json({ message: "I wish we had some information to give you ☹️" });
-});
+router.get("/",findAllType)
+ 
+
+
+
+router.post("/", create);
+
+
 
 export default router;

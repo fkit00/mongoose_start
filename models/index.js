@@ -9,3 +9,6 @@ db.url = process.env.URL;
 db.primate = firstSchema(mongoose);
 
 export default db;
+
+
+// this is like the connection in db/index in a postgres project folder 
