@@ -8,21 +8,23 @@ main().catch((err) => console.log(err));
 
 async function main() {
   await mongoose.connect(connectionString);
-  const primateSchema = new mongoose.Schema({
-    name: String,
-  });
+  // const primateSchema = new mongoose.Schema({
+  //   name: String,
+  // });
 
   primateSchema.methods.speak = function speak() {
     const greeting = this.name ? "Me name " + this.name : "I don't have a name";
     console.log(greeting);
   };
 
+  // const Primate = mongoose.model("Primate", primateSchema);
+
   function empowerTheVoiceless(primate) {
-    const greeting = primate.name ? "Me name " + primate.name : "I don't have a name";
+    const greeting = primate.name
+      ? "Me name " + primate.name
+      : "I don't have a name";
     console.log(greeting);
   }
-
-  const Primate = mongoose.model("Primate", primateSchema);
 
   const maurice = new Primate({ name: "Maurice" });
   const cahaya = new Primate({ name: "Cahaya" });
@@ -50,11 +52,11 @@ async function main() {
   //   if (err) return handleError(err);
   // });
 
-  const bungo = await Primate.find({name: "Bungo"});
-  console.log(bungo)
+  const bungo = await Primate.find({ name: "Bungo" });
+  console.log(bungo);
   // await bungo.save();
   empowerTheVoiceless(bungo[0]);
-  
+
   bungo[0].speak();
 
   // Primate.deleteMany({ name: null }, function (err) {

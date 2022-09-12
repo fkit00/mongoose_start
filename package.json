@@ -1,25 +1,18 @@
 {
-  "name": "mongoose_start",
-  "version": "1.0.0",
-  "description": "- Having a play around with noSQL databases",
-  "main": "index.js",
-  "type":"module",
+  "name": "mongoose-start",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fkit00/mongoose_start.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/fkit00/mongoose_start/issues"
-  },
-  "homepage": "https://github.com/fkit00/mongoose_start#readme",
   "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
     "dotenv": "^16.0.2",
+    "express": "~4.16.1",
     "mongoose": "^6.6.0",
-    "validator": "^13.7.0"
+    "morgan": "~1.9.1"
   }
 }
